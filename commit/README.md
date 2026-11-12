@@ -23,7 +23,7 @@ The skill itself is in [SKILL.md](SKILL.md). This README is for people; Claude o
 |---|---|
 | Push after committing? | No |
 | Open a PR? | No |
-| Co-author / generated-by trailer? | No |
+| Co-author / generated-by trailer? | Never (no `Co-Authored-By:` line or email), even if Claude Code's own attribution setting asks for one |
 | Amend instead of a new commit? | Only when you say "amend" |
 | `--no-verify`? | Never. A failed hook is reported, not skipped. |
 

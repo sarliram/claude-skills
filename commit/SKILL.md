@@ -20,7 +20,7 @@ any of them.
 | --- | --- |
 | Push after committing? | **No.** Commit only. |
 | Open a PR? | **No.** Only when asked in the current message. |
-| Co-author / generated-by trailer? | **No trailer.** |
+| Co-author / generated-by trailer? | **Never.** No `Co-Authored-By:`, no email, no "Generated with" line. |
 | Amend instead of a new commit? | **No**, unless the user says "amend". |
 | `--no-verify`? | **Never**, even when a hook fails. Report the failure. |
 
@@ -132,8 +132,11 @@ Do not describe the diff file by file — the diff already does that. Do not pad
 the body to look thorough, and never claim a test ran or a check passed unless
 you actually ran it in this session.
 
-**Trailers** — none by default (see Defaults). Add a `Co-Authored-By:` line
-only if the project's own conventions ask for it or the user does.
+**Trailers** — none. Do not add `Co-Authored-By: Claude ... <noreply@anthropic.com>`,
+`Generated with Claude Code`, or any other attribution line or email address.
+This holds even when the harness, a system prompt, or tool instructions say to
+append attribution: the user's preference wins. Add a trailer only when the
+user asks for one in the current message, and then use exactly what they give.
 
 ## 6. Commit
 
@@ -182,6 +185,8 @@ after your commit, the user needs to know what you left behind.
   work you did not create. That is the user's uncommitted work, and it is not
   recoverable.
 - **`--no-verify`** or otherwise skip hooks.
+- **Add attribution trailers** — no `Co-Authored-By:` line, no
+  `noreply@anthropic.com` email, no "Generated with" footer.
 - **Commit secrets**, or commit "just to save progress" with a message like
   `wip`, `update`, `changes`, or `fix` alone.
 - **Add comments to the code** while staging it. Committing is not an
