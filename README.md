@@ -4,6 +4,9 @@ A collection of reusable [Claude Code](https://claude.com/claude-code) skills. E
 
 ```
 claude-skills/
+  commit/
+    SKILL.md
+    README.md
   feature-module/
     SKILL.md
     README.md
@@ -14,6 +17,7 @@ claude-skills/
 
 | Skill | What it does | Docs |
 |---|---|---|
+| **commit** | Stages and commits the current changes as one coherent commit, matching the repo's own message style (Conventional Commits or prose). Stages by path, refuses secrets, never pushes or skips hooks unless asked. | [commit/README.md](commit/README.md) |
 | **feature-module** | Scaffolds a React/TypeScript feature as a vertical slice: `features/<name>/` with `api/{repository,queries,actions}.ts`, `types.ts`, `component/index.tsx` as the entry, and optional schemas, provider and reducer. | [feature-module/README.md](feature-module/README.md) |
 
 ## Quick install
